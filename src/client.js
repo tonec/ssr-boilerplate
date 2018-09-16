@@ -13,7 +13,7 @@ import { AppContainer as HotEnabler } from 'react-hot-loader'
 import { getStoredState } from 'redux-persist'
 import { CookieStorage } from 'redux-persist-cookie-storage'
 import Cookies from 'cookies-js'
-import { socket, createApp } from 'app'
+import socket from 'socket'
 import createStore from 'redux/create'
 import apiClient from 'helpers/apiClient'
 import routes from 'routes'
@@ -33,26 +33,11 @@ const persistConfig = {
 
 const dest = document.getElementById('content')
 
-// const app = createApp();
 const client = apiClient()
 const providers = {
-  // app,
+  socket,
   client
-}
-
-function initSocket() {
-  socket.on('news', data => {
-    console.log(data)
-    socket.emit('my other event', { my: 'data from client' })
-  })
-  socket.on('msg', data => {
-    console.log(data)
-  })
-
-  return socket
-}
-
-// initSocket();
+};
 
 (async () => {
   const preloadedState = await getStoredState(persistConfig)
@@ -60,7 +45,6 @@ function initSocket() {
 
   if (online) {
     // socket.open();
-    // await app.authenticate().catch(() => null);
   }
 
   const history = createBrowserHistory()
