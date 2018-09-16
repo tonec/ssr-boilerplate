@@ -35,10 +35,9 @@ const dest = document.getElementById('content')
 
 const client = apiClient()
 const providers = {
-  socket,
+  socket: socket(),
   client
 };
-
 (async () => {
   const preloadedState = await getStoredState(persistConfig)
   const online = window.__data ? true : await isOnline()

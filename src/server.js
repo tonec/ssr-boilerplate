@@ -82,10 +82,6 @@ app.use('/ws', (req, res) => {
   proxy.web(req, res, { target: `${targetUrl}/ws` })
 })
 
-server.on('upgrade', (req, socket, head) => {
-  proxy.ws(req, socket, head)
-})
-
 // added the error handling to avoid https://github.com/nodejitsu/node-http-proxy/issues/527
 proxy.on('error', (error, req, res) => {
   if (error.code !== 'ECONNRESET') {
@@ -108,11 +104,12 @@ app.use(async (req, res) => {
     // hot module replacement is enabled in the development env
     webpackIsomorphicTools.refresh()
   }
+
   const providers = {
-    socket,
+    socket: socket(req),
     client: apiClient(req)
   }
-  // console.log('providers', providers.app)
+
   const history = createMemoryHistory({ initialEntries: [req.originalUrl] })
 
   const cookieJar = new NodeCookiesWrapper(new Cookies(req, res))
