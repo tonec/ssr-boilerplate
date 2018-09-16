@@ -33,7 +33,7 @@ export default function createStore({
 }) {
   const middleware = [clientMiddleware(helpers), routerMiddleware(history)]
 
-  if (__CLIENT__ && __DEVELOPMENT__) {
+  if (__CLIENT__ && __DEVELOPMENT__ && __LOGGER__) {
     const logger = require('redux-logger').createLogger({
       collapsed: true
     })
