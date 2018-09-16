@@ -13,8 +13,8 @@ module.exports = Object.assign(
   {
     host: process.env.HOST || 'localhost',
     port: process.env.PORT,
-    apiHost: process.env.APIHOST || 'localhost',
-    apiPort: process.env.APIPORT,
+    apiHost: process.env.APIHOST || 'api.eventhive.local',
+    apiPort: process.env.APIPORT || '',
     app: {
       title: 'React Redux Example',
       description: 'All the modern best practices in one example.',
