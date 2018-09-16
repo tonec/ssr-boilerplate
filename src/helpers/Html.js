@@ -13,9 +13,7 @@ import config from 'config'
  * HTML doctype declaration, which is added to the rendered output
  * by the server.js file.
  */
-const Html = ({
-  assets, store, content, bundles
-}) => {
+const Html = ({ assets, store, content, bundles }) => {
   const head = Helmet.renderStatic()
 
   /* eslint-disable react/no-danger */

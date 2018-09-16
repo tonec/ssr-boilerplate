@@ -22,9 +22,7 @@ export default class ReduxAsyncConnect extends Component {
   }
 
   async componentWillReceiveProps(nextProps) {
-    const {
-      history, location, routes, store, helpers
-    } = this.props
+    const { history, location, routes, store, helpers } = this.props
     const navigated = nextProps.location !== location
 
     if (navigated) {

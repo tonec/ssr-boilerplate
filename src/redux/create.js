@@ -28,9 +28,7 @@ function getNoopReducers(reducers, data) {
   )
 }
 
-export default function createStore({
-  history, data, helpers, persistConfig
-}) {
+export default function createStore({ history, data, helpers, persistConfig }) {
   const middleware = [clientMiddleware(helpers), routerMiddleware(history)]
 
   if (__CLIENT__ && __DEVELOPMENT__ && __LOGGER__) {

@@ -33,10 +33,9 @@ const persistConfig = {
 
 const dest = document.getElementById('content')
 
-const client = apiClient()
 const providers = {
   socket: socket(),
-  client
+  client: apiClient()
 };
 (async () => {
   const preloadedState = await getStoredState(persistConfig)

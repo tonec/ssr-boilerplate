@@ -42,9 +42,7 @@ export default class MessageItem extends Component {
   }
 
   render() {
-    const {
-      message, user, patchMessage, styles
-    } = this.props
+    const { message, user, patchMessage, styles } = this.props
     const { editing } = this.state
 
     const inEdition = editing[message._id]

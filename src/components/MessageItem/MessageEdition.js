@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import { Form, Field } from 'react-final-form'
 import cn from 'classnames'
 
-const MessageEdition = ({
-  message, patchMessage, styles, stopEdit
-}) => (
+const MessageEdition = ({ message, patchMessage, styles, stopEdit }) => (
   <Form
     initialValues={{
       text: message.text

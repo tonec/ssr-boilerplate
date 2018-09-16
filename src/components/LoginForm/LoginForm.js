@@ -3,9 +3,7 @@ import { Form, Field } from 'react-final-form'
 import PropTypes from 'prop-types'
 import loginValidation from './loginValidation'
 
-const Input = ({
-  input, label, type, meta: { touched, error, submitError }, ...rest
-}) => (
+const Input = ({ input, label, type, meta: { touched, error, submitError }, ...rest }) => (
   <div className={`form-group ${(error || submitError) && touched ? 'has-error' : ''}`}>
     <label htmlFor={input.name} className="col-sm-2">
       {label}

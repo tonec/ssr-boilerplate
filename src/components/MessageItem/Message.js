@@ -2,9 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
-const Message = ({
-  message, user, styles, startEdit
-}) => (
+const Message = ({ message, user, styles, startEdit }) => (
   <Fragment>
     <h4 className="media-heading">
       {message.author ? message.author.email : 'Anonymous'}{' '}
