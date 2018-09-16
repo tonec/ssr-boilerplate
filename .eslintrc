@@ -41,6 +41,7 @@
     "import/no-extraneous-dependencies": "off",
     "import/no-named-as-default": "error",
     "import/no-unresolved": "off",
+    "object-curly-newline": "off",
     "semi": [
       "error",
       "never"
