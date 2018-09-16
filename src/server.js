@@ -109,9 +109,10 @@ app.use(async (req, res) => {
     webpackIsomorphicTools.refresh();
   }
   const providers = {
-    app: createApp(req),
+    // app: createApp(req),
     client: apiClient(req)
   };
+  // console.log('providers', providers.app)
   const history = createMemoryHistory({ initialEntries: [req.originalUrl] });
 
   const cookieJar = new NodeCookiesWrapper(new Cookies(req, res));

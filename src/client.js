@@ -33,7 +33,7 @@ const persistConfig = {
 
 const dest = document.getElementById('content');
 
-const app = createApp();
+const app = {}; // createApp();
 const client = apiClient();
 const providers = {
   app,
@@ -52,16 +52,16 @@ function initSocket() {
   return socket;
 }
 
-initSocket();
+// initSocket();
 
 (async () => {
   const preloadedState = await getStoredState(persistConfig);
   const online = window.__data ? true : await isOnline();
 
-  if (online) {
-    socket.open();
-    await app.authenticate().catch(() => null);
-  }
+  // if (online) {
+  //   socket.open();
+  //   await app.authenticate().catch(() => null);
+  // }
 
   const history = createBrowserHistory();
   const store = createStore({
