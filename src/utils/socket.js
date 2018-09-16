@@ -1,6 +1,6 @@
 import { webSocket } from 'rxjs/webSocket'
-import axiosInstance from './helpers/apiClient'
-import config from './config'
+import axiosInstance from '../helpers/apiClient'
+import config from '../config'
 
 const url = `ws://${config.apiHost}/ws`
 

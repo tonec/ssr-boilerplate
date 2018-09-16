@@ -13,10 +13,10 @@ import { AppContainer as HotEnabler } from 'react-hot-loader'
 import { getStoredState } from 'redux-persist'
 import { CookieStorage } from 'redux-persist-cookie-storage'
 import Cookies from 'cookies-js'
-import socket from 'socket'
 import createStore from 'redux/create'
 import apiClient from 'helpers/apiClient'
 import routes from 'routes'
+import socket from 'utils/socket'
 import isOnline from 'utils/isOnline'
 import asyncMatchRoutes from 'utils/asyncMatchRoutes'
 import { ReduxAsyncConnect, Provider } from 'components'
@@ -42,7 +42,7 @@ const providers = {
   const online = window.__data ? true : await isOnline()
 
   if (online) {
-    // socket.open();
+    // socket.open()
   }
 
   const history = createBrowserHistory()
