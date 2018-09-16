@@ -116,13 +116,9 @@ export default class App extends Component {
 
           <Navbar.Collapse>
             <Nav navbar>
-              <LinkContainer to="/chat">
-                <NavItem>Chat</NavItem>
-              </LinkContainer>
               <LinkContainer to="/about">
                 <NavItem>About Us</NavItem>
               </LinkContainer>
-
               {!user && (
                 <LinkContainer to="/login">
                   <NavItem>Login</NavItem>
