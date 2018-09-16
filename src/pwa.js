@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom/server';
-import Html from './helpers/Html';
+import React from 'react'
+import ReactDOM from 'react-dom/server'
+import Html from './helpers/Html'
 
 export default function () {
-  return `<!doctype html>${ReactDOM.renderToStaticMarkup(<Html />)}`;
+  return `<!doctype html>${ReactDOM.renderToStaticMarkup(<Html />)}`
 }

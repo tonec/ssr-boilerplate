@@ -1,17 +1,17 @@
-import { routerActions } from 'react-router-redux';
-import { connectedReduxRedirect } from 'redux-auth-wrapper/history4/redirect';
-import { App, Home, NotFound } from 'containers';
-import About from 'containers/About/Loadable';
-import Login from 'containers/Login/Loadable';
-import LoginSuccess from 'containers/LoginSuccess/Loadable';
-import Register from 'containers/Register/Loadable';
+import { routerActions } from 'react-router-redux'
+import { connectedReduxRedirect } from 'redux-auth-wrapper/history4/redirect'
+import { App, Home, NotFound } from 'containers'
+import About from 'containers/About/Loadable'
+import Login from 'containers/Login/Loadable'
+import LoginSuccess from 'containers/LoginSuccess/Loadable'
+import Register from 'containers/Register/Loadable'
 
 const isAuthenticated = connectedReduxRedirect({
   redirectPath: '/login',
   authenticatedSelector: state => state.auth.user !== null,
   redirectAction: routerActions.replace,
   wrapperDisplayName: 'UserIsAuthenticated'
-});
+})
 
 const isNotAuthenticated = connectedReduxRedirect({
   redirectPath: '/',
@@ -19,7 +19,7 @@ const isNotAuthenticated = connectedReduxRedirect({
   redirectAction: routerActions.replace,
   wrapperDisplayName: 'UserIsAuthenticated',
   allowRedirectBack: false
-});
+})
 
 const routes = [
   {
@@ -33,6 +33,6 @@ const routes = [
       { component: NotFound }
     ]
   }
-];
+]
 
-export default routes;
+export default routes

@@ -40,7 +40,11 @@
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "import/no-named-as-default": "error",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "semi": [
+      "error",
+      "never"
+    ]
   },
   "plugins": [
     "react",

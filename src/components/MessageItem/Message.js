@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 const Message = ({
   message, user, styles, startEdit
@@ -26,7 +26,7 @@ const Message = ({
     </h4>
     {message.text}
   </Fragment>
-);
+)
 
 Message.propTypes = {
   message: PropTypes.objectOf(PropTypes.any).isRequired,
@@ -37,10 +37,10 @@ Message.propTypes = {
     controlBtn: PropTypes.string
   }).isRequired,
   startEdit: PropTypes.func.isRequired
-};
+}
 
 Message.defaultProps = {
   user: null
-};
+}
 
-export default Message;
+export default Message

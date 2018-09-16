@@ -1,17 +1,17 @@
-import fs from 'fs';
+import fs from 'fs'
 
-let chunksStats = [];
+let chunksStats = []
 
 export function getChunks() {
-  return chunksStats;
+  return chunksStats
 }
 
 function waitWatchFile({ path, onChange, timeout = 60000 } = {}) {
   function watch(loaded, timeleft) {
     return new Promise((resolve, reject) => {
       if (timeleft < 0) {
-        loaded = true;
-        return reject(new Error(`waitFile: timeout (${timeout}ms): ${path}`));
+        loaded = true
+        return reject(new Error(`waitFile: timeout (${timeout}ms): ${path}`))
       }
 
       // Simple first read for production
@@ -19,53 +19,53 @@ function waitWatchFile({ path, onChange, timeout = 60000 } = {}) {
         fs.access(path, fs.constants.R_OK, err => {
           if (!err && !loaded) {
             fs.readFile(path, 'utf8', (err2, data) => {
-              if (err2) return reject(err2);
-              loaded = true;
-              resolve(data);
-            });
+              if (err2) return reject(err2)
+              loaded = true
+              resolve(data)
+            })
           }
-        });
+        })
       }
 
       if (!__DEVELOPMENT__) {
-        return;
+        return
       }
 
       try {
         const watcher = fs.watch(path, 'utf8', eventType => {
-          if (eventType !== 'change') return;
+          if (eventType !== 'change') return
           fs.readFile(path, 'utf8', (err2, data) => {
-            if (err2) return onChange(err2);
-            loaded = true;
-            onChange(null, data);
-          });
-        });
+            if (err2) return onChange(err2)
+            loaded = true
+            onChange(null, data)
+          })
+        })
 
         setTimeout(() => {
-          watcher.close();
+          watcher.close()
           if (!loaded) {
-            loaded = true;
-            reject(new Error(`waitFile: timeout (${timeout}ms): ${path}`));
+            loaded = true
+            reject(new Error(`waitFile: timeout (${timeout}ms): ${path}`))
           }
-        }, timeleft);
+        }, timeleft)
       } catch (err) {
         if (err.code === 'ENOENT') {
-          return setTimeout(() => resolve(watch(loaded, timeleft - 100)), 100);
+          return setTimeout(() => resolve(watch(loaded, timeleft - 100)), 100)
         }
-        loaded = true;
-        reject(err);
+        loaded = true
+        reject(err)
       }
-    });
+    })
   }
 
-  return watch(false, timeout);
+  return watch(false, timeout)
 }
 
 function parse(json) {
   try {
-    return JSON.parse(json);
+    return JSON.parse(json)
   } catch (e) {
-    return chunksStats;
+    return chunksStats
   }
 }
 
@@ -74,14 +74,14 @@ export async function waitChunks(chunksPath, timeout) {
     path: chunksPath,
     onChange(err, stats) {
       if (err) {
-        throw new Error('Unable to load chunks');
+        throw new Error('Unable to load chunks')
       }
-      chunksStats = parse(stats);
+      chunksStats = parse(stats)
     },
     timeout
-  });
+  })
 
-  chunksStats = parse(chunksStatsJson);
+  chunksStats = parse(chunksStatsJson)
 
-  return chunksStats;
+  return chunksStats
 }

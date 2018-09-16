@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import * as authActions from 'redux/modules/auth';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import * as authActions from 'redux/modules/auth'
 
 @connect(state => ({ user: state.auth.user }), authActions)
 export default class LoginSuccess extends Component {
@@ -10,10 +10,10 @@ export default class LoginSuccess extends Component {
       email: PropTypes.string
     }).isRequired,
     logout: PropTypes.func.isRequired
-  };
+  }
 
   render() {
-    const { user, logout } = this.props;
+    const { user, logout } = this.props
     return (
       user && (
         <div className="container">
@@ -38,6 +38,6 @@ export default class LoginSuccess extends Component {
           </div>
         </div>
       )
-    );
+    )
   }
 }

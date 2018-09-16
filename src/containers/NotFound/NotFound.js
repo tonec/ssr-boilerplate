@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default function NotFound() {
   return (
@@ -8,5 +8,5 @@ export default function NotFound() {
         These are <em>not</em> the droids you are looking for!
       </p>
     </div>
-  );
+  )
 }

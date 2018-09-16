@@ -1,8 +1,8 @@
-import { getContext } from 'recompose';
-import PropTypes from 'prop-types';
+import { getContext } from 'recompose'
+import PropTypes from 'prop-types'
 
 const withStore = getContext({
   store: PropTypes.any
-});
+})
 
-export default withStore;
+export default withStore

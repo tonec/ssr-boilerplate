@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Form, Field } from 'react-final-form';
-import cn from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Form, Field } from 'react-final-form'
+import cn from 'classnames'
 
 const MessageEdition = ({
   message, patchMessage, styles, stopEdit
@@ -11,8 +11,8 @@ const MessageEdition = ({
       text: message.text
     }}
     onSubmit={async values => {
-      await patchMessage(message._id, values);
-      stopEdit(message);
+      await patchMessage(message._id, values)
+      stopEdit(message)
     }}
     render={({ handleSubmit }) => (
       <form onSubmit={handleSubmit}>
@@ -42,7 +42,7 @@ const MessageEdition = ({
       </form>
     )}
   />
-);
+)
 
 MessageEdition.propTypes = {
   styles: PropTypes.shape({
@@ -51,6 +51,6 @@ MessageEdition.propTypes = {
   patchMessage: PropTypes.func.isRequired,
   message: PropTypes.objectOf(PropTypes.any).isRequired,
   stopEdit: PropTypes.func.isRequired
-};
+}
 
-export default MessageEdition;
+export default MessageEdition

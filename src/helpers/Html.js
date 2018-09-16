@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import serialize from 'serialize-javascript';
-import Helmet from 'react-helmet';
-import config from 'config';
+import React from 'react'
+import PropTypes from 'prop-types'
+import serialize from 'serialize-javascript'
+import Helmet from 'react-helmet'
+import config from 'config'
 
 /**
  * Wrapper component containing HTML metadata and boilerplate tags.
@@ -16,7 +16,7 @@ import config from 'config';
 const Html = ({
   assets, store, content, bundles
 }) => {
-  const head = Helmet.renderStatic();
+  const head = Helmet.renderStatic()
 
   /* eslint-disable react/no-danger */
   return (
@@ -73,9 +73,9 @@ const Html = ({
         ) : null}
       </body>
     </html>
-  );
+  )
   /* eslint-enable react/no-danger */
-};
+}
 
 Html.propTypes = {
   assets: PropTypes.shape({
@@ -87,12 +87,12 @@ Html.propTypes = {
   store: PropTypes.shape({
     getState: PropTypes.func
   }).isRequired
-};
+}
 
 Html.defaultProps = {
   assets: {},
   bundles: [],
   content: ''
-};
+}
 
-export default Html;
+export default Html

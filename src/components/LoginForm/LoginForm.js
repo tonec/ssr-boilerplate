@@ -1,7 +1,7 @@
-import React from 'react';
-import { Form, Field } from 'react-final-form';
-import PropTypes from 'prop-types';
-import loginValidation from './loginValidation';
+import React from 'react'
+import { Form, Field } from 'react-final-form'
+import PropTypes from 'prop-types'
+import loginValidation from './loginValidation'
 
 const Input = ({
   input, label, type, meta: { touched, error, submitError }, ...rest
@@ -21,14 +21,14 @@ const Input = ({
       )}
     </div>
   </div>
-);
+)
 
 Input.propTypes = {
   input: PropTypes.objectOf(PropTypes.any).isRequired,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   meta: PropTypes.objectOf(PropTypes.any).isRequired
-};
+}
 
 const LoginForm = ({ onSubmit }) => (
   <Form
@@ -49,10 +49,10 @@ const LoginForm = ({ onSubmit }) => (
       </form>
     )}
   />
-);
+)
 
 LoginForm.propTypes = {
   onSubmit: PropTypes.func.isRequired
-};
+}
 
-export default LoginForm;
+export default LoginForm

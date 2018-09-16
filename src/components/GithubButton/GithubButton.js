@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const GithubButton = props => {
   const {
     user, repo, type, width, height, count, large
-  } = props;
-  let src = `https://ghbtns.com/github-btn.html?user=${user}&repo=${repo}&type=${type}`;
-  if (count) src += '&count=true';
-  if (large) src += '&size=large';
+  } = props
+  let src = `https://ghbtns.com/github-btn.html?user=${user}&repo=${repo}&type=${type}`
+  if (count) src += '&count=true'
+  if (large) src += '&size=large'
 
   return (
     <iframe
@@ -19,8 +19,8 @@ const GithubButton = props => {
       height={height}
       style={{ border: 'none', width, height }}
     />
-  );
-};
+  )
+}
 
 GithubButton.propTypes = {
   user: PropTypes.string.isRequired,
@@ -30,6 +30,6 @@ GithubButton.propTypes = {
   height: PropTypes.number.isRequired,
   count: PropTypes.bool.isRequired,
   large: PropTypes.bool.isRequired
-};
+}
 
-export default GithubButton;
+export default GithubButton

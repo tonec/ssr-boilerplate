@@ -7,7 +7,7 @@ const environment = {
     isProduction: true,
     assetsPath: '/dist/'
   }
-}[process.env.NODE_ENV || 'development'];
+}[process.env.NODE_ENV || 'development']
 
 module.exports = Object.assign(
   {
@@ -38,4 +38,4 @@ module.exports = Object.assign(
     }
   },
   environment
-);
+)

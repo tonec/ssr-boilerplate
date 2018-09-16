@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Helmet from 'react-helmet';
-import { provideHooks } from 'redial';
-import MiniInfoBar from 'components/MiniInfoBar/MiniInfoBar';
-import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
+import React, { Component } from 'react'
+import Helmet from 'react-helmet'
+import { provideHooks } from 'redial'
+import MiniInfoBar from 'components/MiniInfoBar/MiniInfoBar'
+import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info'
 
 @provideHooks({
   fetch: ({ store: { dispatch, getState } }) =>
@@ -11,13 +11,13 @@ import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 export default class About extends Component {
   state = {
     showKitten: false
-  };
+  }
 
-  handleToggleKitten = () => this.setState({ showKitten: !this.state.showKitten });
+  handleToggleKitten = () => this.setState({ showKitten: !this.state.showKitten })
 
   render() {
-    const { showKitten } = this.state;
-    const kitten = require('./kitten.jpg');
+    const { showKitten } = this.state
+    const kitten = require('./kitten.jpg')
     return (
       <div className="container">
         <h1>About Us</h1>
@@ -71,6 +71,6 @@ export default class About extends Component {
           </div>
         )}
       </div>
-    );
+    )
   }
 }

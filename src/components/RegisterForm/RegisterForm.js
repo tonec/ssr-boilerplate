@@ -1,7 +1,7 @@
-import React from 'react';
-import { Form, Field } from 'react-final-form';
-import PropTypes from 'prop-types';
-import registerValidation from './registerValidation';
+import React from 'react'
+import { Form, Field } from 'react-final-form'
+import PropTypes from 'prop-types'
+import registerValidation from './registerValidation'
 
 const Input = ({
   input, label, type, meta: { touched, error, submitError }, ...rest
@@ -21,14 +21,14 @@ const Input = ({
       )}
     </div>
   </div>
-);
+)
 
 Input.propTypes = {
   input: PropTypes.objectOf(PropTypes.any).isRequired,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   meta: PropTypes.objectOf(PropTypes.any).isRequired
-};
+}
 
 const RegisterForm = ({ onSubmit, initialValues }) => (
   <Form
@@ -51,15 +51,15 @@ const RegisterForm = ({ onSubmit, initialValues }) => (
       </form>
     )}
   />
-);
+)
 
 RegisterForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   initialValues: PropTypes.objectOf(PropTypes.any)
-};
+}
 
 RegisterForm.defaultProps = {
   initialValues: {}
-};
+}
 
-export default RegisterForm;
+export default RegisterForm

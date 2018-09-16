@@ -1,12 +1,12 @@
-import PropTypes from 'prop-types';
-import { Provider as ReduxProvider } from 'react-redux';
-import { withContext } from 'recompose';
+import PropTypes from 'prop-types'
+import { Provider as ReduxProvider } from 'react-redux'
+import { withContext } from 'recompose'
 
 const Provider = withContext(
   {
-    app: PropTypes.objectOf(PropTypes.any).isRequired
+    app: PropTypes.objectOf(PropTypes.any)
   },
   ({ app }) => ({ app })
-)(ReduxProvider);
+)(ReduxProvider)
 
-export default Provider;
+export default Provider
